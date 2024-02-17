@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.note-area {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  width: 600px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  text-align: left;
+}
+
+.note-text {
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  display: none;
+}
+
+#notes {
+  position: relative;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.note {
+  position: relative;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 270px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.note p {
+  padding-bottom: 25px;
+  word-wrap: break-word;
+}
+
+.note i {
+  visibility: hidden;
+}
+
+.note i.show {
+  position: relative;
+  top: 90%;
+  left: 90%;
+  color: cadetblue;
+  font-size: 30px;
+  visibility: visible;
+}
+
+.note-now {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.note:hover {
+  box-shadow: 0 2px 10px rgba(71, 71, 71, 0.9);
+}
+
+/* For screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  #notes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .note-area {
+    width: 270px;
+  }
+}
+
+/* For screens between 600px and 991px */
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+  #notes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For screens between 992px and 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #notes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For screens larger than or equal to 1200px */
+@media only screen and (min-width: 1200px) {
+  #notes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
